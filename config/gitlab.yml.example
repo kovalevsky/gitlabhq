@@ -20,7 +20,7 @@ production: &base
     https: false
 
     # Uncomment and customize the last line to run in a non-root path
-    # WARNING: We recommend creating a FQDN to host GitLab in a root path instead of this. 
+    # WARNING: We recommend creating a FQDN to host GitLab in a root path instead of this.
     # Note that four settings need to be changed for this to work.
     # 1) In your application.rb file: config.relative_url_root = "/gitlab"
     # 2) In your gitlab.yml file: relative_url_root: /gitlab
@@ -39,6 +39,17 @@ production: &base
 
     # Email address of your support contact (default: same as email_from)
     support_email: support@localhost
+
+    email:
+    # Default delivery method is 'sendmail'
+    #
+    #  delivery_method: smtp
+    #  smtp_settings:
+    #    address:
+    #    port: 587
+    #    user_name:
+    #    password:
+    #    authentication: login
 
     ## User settings
     default_projects_limit: 10
@@ -107,7 +118,7 @@ production: &base
     #   ##  :project_id        - GitLab project identifier
     #   ##  :issues_tracker_id - Project Name or Id in external issue tracker
     #   new_issue_url: "http://redmine.sample/projects/:issues_tracker_id/issues/new"
-    # 
+    #
     # jira:
     #   title: "Atlassian Jira"
     #   project_url: "http://jira.sample/issues/?jql=project=:issues_tracker_id"
