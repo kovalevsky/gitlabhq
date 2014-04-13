@@ -30,8 +30,6 @@ Gitlab::Application.configure do
 
   # For having correct urls in mails
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  # Open sent mails in browser
-  config.action_mailer.delivery_method = :letter_opener
 
   config.eager_load = false
 end

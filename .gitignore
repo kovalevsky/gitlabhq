@@ -36,3 +36,8 @@ doc/code/*
 public/uploads.*
 public/assets/
 .envrc
+# CTags indexes
+.tags
+.tags_sorted_by_file
+# SublimeText files
+*.sublime-*

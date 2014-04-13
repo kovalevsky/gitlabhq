@@ -154,3 +154,9 @@ if Rails.env.test?
   Settings.gitlab['default_can_create_group'] = false
   Settings.gitlab['default_can_create_team']  = false
 end
+
+#
+# ActionMailer settings
+#
+Settings.gitlab['email'] ||= Settingslogic.new({})
+Settings.gitlab.email['delivery_method'] ||= Rails.env.development? ? 'letter_opener' : 'sendmail'
