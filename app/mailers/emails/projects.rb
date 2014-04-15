@@ -24,7 +24,8 @@ module Emails
       @diffs   = compare.diffs
       @branch  = branch
       if @commits.length > 1
-        @target_url = project_compare_url(@project, from: @commits.first, to: @commits.last)
+        from = @commits.first.parents.blank? ? @commits.first : @commits.first.parents.first
+        @target_url = project_compare_url(@project, from: from, to: @commits.last)
       else
         @target_url = project_commit_url(@project, @commits)
       end

@@ -7,8 +7,9 @@
     %li
       #{link_to commit.short_id, project_commit_url(@project, commit)} - #{commit.title}
 
-%div
-  = link_to 'View diff at GitLab', @target_url
+- if @commits.size > 1
+  %div
+    = link_to 'View commits compare', @target_url
 
 %h4 Changes:
 - @diffs.each do |diff|
