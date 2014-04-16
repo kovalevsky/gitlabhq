@@ -5,7 +5,7 @@
 %ul
   - @commits.each do |commit|
     %li
-      #{link_to commit.short_id, project_commit_url(@project, commit)} - #{commit.title}
+      #{link_to commit.short_id, project_commit_url(@project, commit)} - #{simple_format commit.safe_message, {} wrapper_tag: 'span'}
 
 - if @commits.size > 1
   %div
